@@ -1,0 +1,20 @@
+module multiply_by_2_case(
+    input [2:0] D,     // 3-bit input
+    output reg [3:0] P // 4-bit output
+);
+
+always @(*) begin
+    case(D)
+        3'b000: P = 4'b0000; // 0 * 2 = 0
+        3'b001: P = 4'b0010; // 1 * 2 = 2
+        3'b010: P = 4'b0100; // 2 * 2 = 4
+        3'b011: P = 4'b0110; // 3 * 2 = 6
+        3'b100: P = 4'b1000; // 4 * 2 = 8
+        3'b101: P = 4'b1010; // 5 * 2 = 10
+        3'b110: P = 4'b1100; // 6 * 2 = 12
+        3'b111: P = 4'b1110; // 7 * 2 = 14
+        default: P = 4'b0000;
+    endcase
+end
+
+endmodule
