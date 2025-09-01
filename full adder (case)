@@ -1,0 +1,21 @@
+module case_file(
+input a,
+input b,
+input q,
+output reg c,
+output reg sum);
+always@(a or b or q)
+begin 
+case({a,b,c})
+3'b000:begin c=0;sum=0;end
+3'b001:begin c=0;sum=1;end
+3'b010:begin c=0;sum=1;end
+3'b011:begin c=1;sum=0;end
+3'b100:begin c=0;sum=1;end
+3'b101:begin c=1;sum=0;end
+3'b110:begin c=1;sum=0;end
+3'b111:begin c=1;sum=1;end
+endcase
+ end
+endmodule 
+ 
